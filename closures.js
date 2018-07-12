@@ -164,6 +164,7 @@ var module = (function() {
   // Anything that is being returned is made public and can be invoked from
   // outside our lexical scope
   return {
+    // code here
     publicMethod: function() {
       return privateMethod();
     }
@@ -220,10 +221,16 @@ function secretNumber() {
 */
 
 function timeOutCounter() {
-  for (var i = 0; i <= 5; i++) {
-    setTimeout(function() {
-      console.log(i);
-    }, i * 1000);
-  }
+
+  function whatever(i){
+  setTimeout(function() {
+    console.log(i);
+  }, i * 1000);
+}
+
+
+  for (i = 0; i <= 5; i++) {
+    whatever(i);
+}
 }
 timeOutCounter();
